@@ -36,7 +36,7 @@ export default {
 .producto-card {
     display: flex;
     flex-direction: column;
-    margin: .5em auto;
+    margin: .5em;
     border-radius: 5px;
     background-color: #ffffff;
 }
@@ -47,9 +47,8 @@ export default {
 
 .producto-card-img img {
     margin: auto;
-    width: 45vw;
-    height: 60vw;
-    margin: auto;
+    width: 20vw;
+    height: 50vw;
     object-fit: contain;
     background-color: #000000;
 }
