@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <!-- <img alt="Vue logo" src="../assets/logo.jpeg" /> -->
     <Categorias/>
     <Productos :productos="productos"/>
   </div>

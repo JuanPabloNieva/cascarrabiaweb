@@ -10,24 +10,38 @@
 </template>
 
 <style>
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: #eeeeee;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
 }
 
 #nav {
-  padding: 10px;
+  text-align: center;
+  padding: 15px;
+  background-color: #ffee2f;
 }
 
 #nav a {
-  text-decoration: none;
   font-weight: bold;
   color: #ff4db1;
 }
 
 #nav a.router-link-exact-active {
-  color: #ffee2f;
+  color: #ffffff;
 }
+
+a {
+  text-decoration: none;
+}
+
 </style>

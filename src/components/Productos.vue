@@ -3,7 +3,7 @@
     <div v-for="producto of productos" :key="producto.id">
         <div class="producto-card">
           <div class="producto-card-img">
-            <img :src="producto.url_imagen" alt="" style="width:4em" />
+            <img :src="producto.url_imagen" alt=""/>
           </div>
           <div class="producto-card-body">
             <p class="producto-card-title">{{ producto.nombre }}</p>
@@ -28,15 +28,14 @@ export default {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: left;
-    padding: .5em;
-    /* margin-top: 4em; */
+    justify-content: space-evenly;
+    padding: 5px;
 }
 
 .producto-card {
     display: flex;
     flex-direction: column;
-    margin: .5em;
+    margin: .3em;
     border-radius: 5px;
     background-color: #ffffff;
 }
@@ -47,7 +46,7 @@ export default {
 
 .producto-card-img img {
     margin: auto;
-    width: 20vw;
+    width: 40vw;
     height: 50vw;
     object-fit: contain;
     background-color: #000000;
@@ -62,13 +61,12 @@ export default {
 }
 
 .producto-card-title {
-    padding: 1em 0px .5em 0px;
     font-size: 3vw;
 }
 
 .producto-card-price {
     margin: auto;
-    padding-bottom: .5em;
+    padding-bottom: .6em;
     font-size: 4vw;
 }
 </style>
