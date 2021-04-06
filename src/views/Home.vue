@@ -1,6 +1,9 @@
 <template>
   <div class="home">
     <Categorias/>
+    <div class="title">
+      <h1>Productos</h1>
+    </div>
     <Productos :productos="productos"/>
   </div>
 </template>
@@ -34,3 +37,14 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.title {
+  display: flex;
+  margin: 10px;
+}
+
+.title h1 {
+  margin: auto;
+}
+</style>

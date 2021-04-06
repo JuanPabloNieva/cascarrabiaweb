@@ -22,6 +22,7 @@ export default {
 a {
     color: #ff4db1;
 }
+
 #categorias {
     display: flex;
     flex-wrap: wrap;
@@ -29,6 +30,7 @@ a {
     padding: .5em;
     /* width: 100%; */
     background-color: #ffee2f;
+    font-weight: bold;
     /* position: fixed; */
 }
 

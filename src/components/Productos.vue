@@ -25,48 +25,51 @@ export default {
 
 <style scoped>
 #lista-productos {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding: 5px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 5px;
+  font-weight: bold;
 }
 
 .producto-card {
-    display: flex;
-    flex-direction: column;
-    margin: .3em;
-    border-radius: 5px;
-    background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  margin: .3em;
+  background-color: #dddddd;
+  border-bottom: 2px solid #ffee2f;
 }
 
 .producto-card-img {
-    display: flex;
+  display: flex;
 }
 
 .producto-card-img img {
-    margin: auto;
-    width: 40vw;
-    height: 50vw;
-    object-fit: contain;
-    background-color: #000000;
+  margin: auto;
+  width: 40vw;
+  height: 50vw;
+  object-fit: contain;
+  background-color: #000000;
 }
 
 .producto-card-body {
-    margin: auto;
-    /* padding: .5em; */
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+  margin: auto;
+  /* padding: .5em; */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .producto-card-title {
-    font-size: 3vw;
+  margin-top: 5px;
+  font-size: 3vw;
 }
 
 .producto-card-price {
-    margin: auto;
-    padding-bottom: .6em;
-    font-size: 4vw;
+  margin: auto;
+  padding-bottom: .6em;
+  font-size: 4vw;
 }
 </style>
