@@ -38,7 +38,8 @@ export default {
   display: flex;
   flex-direction: column;
   margin: .3em;
-  background-color: #dddddd;
+  background-color: #ffffff;
+  /* background-color: #fff27e; */
   border-bottom: 2px solid #ffee2f;
 }
 

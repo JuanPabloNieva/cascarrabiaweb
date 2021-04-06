@@ -19,9 +19,6 @@ export default {
 </script>
 
 <style scoped>
-a {
-    color: #ff4db1;
-}
 
 #categorias {
     display: flex;
@@ -30,6 +27,7 @@ a {
     padding: .5em;
     /* width: 100%; */
     background-color: #ffee2f;
+    /* background-color: #fff27e; */
     font-weight: bold;
     /* position: fixed; */
 }
@@ -39,6 +37,7 @@ a {
     padding: .5em;
     border-radius: 5px;
     background-color: #ffffff;
+    /* background-color: #fff27e; */
     font-size: 3vw;
 }
 </style>

@@ -29,7 +29,6 @@ export default {
     async getProductos () {
       const datos = await axios.get('https://cascarrabia.herokuapp.com/api/productos_all')
       this.productos = datos.data.productos
-      console.log(datos)
     }
   },
   created () {

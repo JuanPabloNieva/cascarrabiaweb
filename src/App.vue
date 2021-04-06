@@ -1,17 +1,17 @@
 <template>
   <div id="app">
     <nav id="nav-bar">
-      <div id="menu" class="nav-bar-menu"> <a href="#" type="button" v-on:click="expandirMenu"><i class="fas fa-bars">Menu</i></a> </div>
-      <div class="nav-bar-menu"><i class="fas fa-shopping-cart">Carrito</i></div>
+      <div id="menu" class="nav-bar-menu"> <a href="#" type="button" v-on:click="expandirMenu"><i class="fas fa-bars"></i></a> </div>
+      <div class="nav-bar-menu"><i class="fas fa-shopping-cart"></i></div>
     </nav>
-    <div id="nav-bar-extend">
+    <div id="nav-bar-extend" v-on:click="clickearFueraMenu">
       <div id="nav-bar-items">
         <div id="equis-nav-bar">
-          <a id="equis" href="#" v-on:click="expandirMenu">X</a>
+          <a id="equis" href="#" v-on:click="cerrarMenu">X</a>
         </div>
-        <router-link to="/">Productos</router-link>
-        <router-link to="/about">¿Quienes somos?</router-link>
-        <router-link to="/servicios">Ayuda</router-link>
+        <router-link to="/" @click.native="cerrarMenu">Productos</router-link>
+        <router-link to="/about" @click.native="cerrarMenu">Nosotros</router-link>
+        <router-link to="/servicios" @click.native="cerrarMenu">Ayuda</router-link>
       </div>
     </div>
     <router-view/>
@@ -22,11 +22,17 @@
 export default {
   methods: {
     expandirMenu () {
-      var menuExp = document.getElementById('nav-bar-extend')
-      if (menuExp.style.display === 'none') {
-        menuExp.style.display = 'flex'
-      } else {
-        menuExp.style.display = 'none'
+      document.getElementById('nav-bar-extend').style.display = 'flex'
+    },
+    cerrarMenu () {
+      document.getElementById('nav-bar-extend').style.display = 'none'
+    },
+    clickearFueraMenu (e) {
+      const clic = e.target
+      const div = document.getElementById('nav-bar-items')
+      const el = window.getComputedStyle(div)
+      if (el.getPropertyValue('display') === 'flex' && clic !== div) {
+        document.getElementById('nav-bar-extend').style.display = 'none'
       }
     }
   }
@@ -41,16 +47,18 @@ export default {
 
 a {
   text-decoration: none;
+  color: #333333;
 }
 
 html {
-  background-color: #eeeeee;
+  background-color: #ffffff;
 }
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #333333;
 }
 
 #nav-bar {
@@ -66,14 +74,13 @@ html {
 }
 
 #nav-bar-extend {
-    display: flex;
     display: none;
     position: absolute;
     justify-content: flex-start;
     top: 0%;
     width: 100vw;
     height: 100vh;
-    background-color: rgb(0, 0, 0, .6);
+    background-color: rgb(0, 0, 0, .7);
 }
 
 #nav-bar-items {
@@ -93,8 +100,9 @@ html {
 }
 
 #equis {
-  font-size: 2em;
-  width: 10vh;
+  font-size: 1.5em;
+  /* width: 10vh; */
+  padding: 15px;
   text-align: center;
   text-decoration: none;
 }
