@@ -9,7 +9,14 @@
         <div id="equis-nav-bar">
           <a id="equis" href="#" v-on:click="cerrarMenu">X</a>
         </div>
-        <router-link to="/" @click.native="cerrarMenu">Productos</router-link>
+        <router-link id="productos" to="/" @click.native="expandirSubmenu">Productos</router-link>
+        <div id="submenu-productos">
+          <div class="submenu-item"><a href="#" @click="filtrarPor('Todas')">Mostrar Todos</a></div>
+          <div class="submenu-item"><a href="#" @click="filtrarPor('Pilusos')">Pilusos</a></div>
+          <div class="submenu-item"><a href="#" @click="filtrarPor('Gorras')">Gorras</a></div>
+          <div class="submenu-item"><a href="#" @click="filtrarPor('Medias')">Medias</a></div>
+          <div class="submenu-item"><a href="#" @click="filtrarPor('Gorritos')">Gorritos</a></div>
+        </div>
         <router-link to="/about" @click.native="cerrarMenu">Nosotros</router-link>
         <router-link to="/servicios" @click.native="cerrarMenu">Ayuda</router-link>
       </div>
@@ -19,10 +26,27 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
+
 export default {
+  computed: {
+    ...mapState({
+      filtro: state => state.filtro
+    })
+  },
   methods: {
+    ...mapActions(['filtrarPor']),
     expandirMenu () {
       document.getElementById('nav-bar-extend').style.display = 'flex'
+    },
+    expandirSubmenu () {
+      const div = document.getElementById('submenu-productos')
+      const el = window.getComputedStyle(div)
+      if (el.getPropertyValue('display') === 'flex') {
+        div.style.display = 'none'
+      } else {
+        div.style.display = 'flex'
+      }
     },
     cerrarMenu () {
       document.getElementById('nav-bar-extend').style.display = 'none'
@@ -30,8 +54,11 @@ export default {
     clickearFueraMenu (e) {
       const clic = e.target
       const div = document.getElementById('nav-bar-items')
+      const prod = document.getElementById('productos')
       const el = window.getComputedStyle(div)
-      if (el.getPropertyValue('display') === 'flex' && clic !== div) {
+
+      /* Si el elemento esta en display:flex y se clickea fuera del elemento o en productos */
+      if (el.getPropertyValue('display') === 'flex' && clic !== div && clic !== prod) {
         document.getElementById('nav-bar-extend').style.display = 'none'
       }
     }
@@ -81,6 +108,7 @@ html {
     width: 100vw;
     height: 100vh;
     background-color: rgb(0, 0, 0, .7);
+    font-weight: bold;
 }
 
 #nav-bar-items {
@@ -96,7 +124,7 @@ html {
 #equis-nav-bar {
     display: flex;
     justify-content: flex-end;
-    padding: .4em;
+    padding: 4px;
 }
 
 #equis {
@@ -105,13 +133,27 @@ html {
   padding: 15px;
   text-align: center;
   text-decoration: none;
+  font-weight: bold;
 }
 
 #nav-bar-items > a{
   display: flex;
-  padding: .4em;
-  margin-left: 10px;
+  padding: 10px 20px;
   text-decoration: none;
   font-size: 1.5em;
+}
+
+/* SUBMENU-PRODUCTOS */
+#submenu-productos {
+  display: none;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+.submenu-item {
+  /* margin: 10px; */
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 2px solid #ffee2f;
 }
 </style>
