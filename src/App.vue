@@ -149,11 +149,17 @@ html {
   flex-direction: column;
   background-color: #ffffff;
 }
+
 .submenu-item {
-  /* margin: 10px; */
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid #ffee2f;
+}
+
+.submenu-item > a {
   padding: 20px;
   text-align: center;
+  width: 100%;
   font-weight: bold;
-  border-bottom: 2px solid #ffee2f;
 }
 </style>
