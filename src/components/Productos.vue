@@ -15,10 +15,14 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'Productos',
-  props: {
-    productos: {}
+  computed: {
+    ...mapState({
+      productos: state => state.productos
+    })
   }
 }
 </script>

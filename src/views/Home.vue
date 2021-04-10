@@ -4,7 +4,7 @@
     <div class="title">
       <h1>Productos</h1>
     </div>
-    <Productos :productos="productos"/>
+    <Productos/>
   </div>
 </template>
 
@@ -12,27 +12,24 @@
 // @ is an alias to /src
 import Productos from '@/components/Productos.vue'
 import Categorias from '@/components/Categorias.vue'
-import axios from 'axios'
+import { mapState, mapActions } from 'vuex'
 
 export default {
   name: 'Home',
-  data () {
-    return {
-      productos: []
-    }
-  },
   components: {
     Productos,
     Categorias
   },
+  computed: {
+    ...mapState({
+      productos: state => state.productos
+    })
+  },
   methods: {
-    async getProductos () {
-      const datos = await axios.get('https://cascarrabia.herokuapp.com/api/productos_all')
-      this.productos = datos.data.productos
-    }
+    ...mapActions(['obtenerProductos'])
   },
   created () {
-    this.getProductos()
+    this.obtenerProductos()
   }
 }
 </script>
