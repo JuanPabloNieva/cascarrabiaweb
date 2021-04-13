@@ -17,17 +17,25 @@ export default new Vuex.Store({
   },
   actions: {
     obtenerProductos: async function ({ commit }) {
-      const data = await axios.get('https://cascarrabia.herokuapp.com/api/productos_all')
-      const productos = data.data.productos
-      commit('cargarProductos', productos)
+      await axios
+        .get('https://cascarrabia.herokuapp.com/api/productos_all')
+        .then(response => {
+          const productos = response.data.productos
+          commit('cargarProductos', productos)
+        })
+        .catch(e => console.log(e))
     },
     filtrarPor: async function ({ commit }, value) {
-      const data = await axios.get('https://cascarrabia.herokuapp.com/api/productos_all')
-      let productos = data.data.productos
-      if (value !== 'Todas') {
-        productos = productos.filter(p => p.categoria === value.toUpperCase())
-      }
-      commit('cargarProductos', productos)
+      await axios
+        .get('https://cascarrabia.herokuapp.com/api/productos_all')
+        .then(response => {
+          let productos = response.data.productos
+          if (value !== 'Todas') {
+            productos = productos.filter(p => p.categoria === value.toUpperCase())
+          }
+          commit('cargarProductos', productos)
+        })
+        .catch(e => console.log(e))
     }
   },
   modules: {

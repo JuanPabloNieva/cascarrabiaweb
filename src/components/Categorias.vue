@@ -31,22 +31,20 @@ export default {
 </script>
 
 <style scoped>
-
 #categorias {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     margin-top: 1em;
     padding: .5em;
-    /* width: 100%; */
-    background-color: #ffee2f;
-    /* background-color: #fff27e; */
+    background-color: #000000;
     font-weight: bold;
     /* position: fixed; */
 }
 
 .title-categoria {
   text-align: center;
+  color: #ff4db1;
 }
 
 .categorias-items {
@@ -55,11 +53,14 @@ export default {
 }
 
 .categorias-item {
-    margin: auto;
+    margin: 10px auto;
     padding: .5em;
     border-radius: 5px;
-    background-color: #ffffff;
-    /* background-color: #fff27e; */
+    background-color: #111111;
     font-size: 3vw;
+}
+
+.categorias-item > a {
+  color: #FFE4F9;
 }
 </style>

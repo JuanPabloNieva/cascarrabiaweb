@@ -8,6 +8,7 @@
           <div class="producto-card-body">
             <p class="producto-card-title">{{ producto.nombre }}</p>
             <p class="producto-card-price">${{ producto.precio }}</p>
+            <!-- <button class="producto-card-button">Agregar a carrito</button> -->
           </div>
         </div>
       </div>
@@ -42,9 +43,7 @@ export default {
   display: flex;
   flex-direction: column;
   margin: .3em;
-  background-color: #ffffff;
-  /* background-color: #fff27e; */
-  border-bottom: 2px solid #ffee2f;
+  border-bottom: 2px solid #ff4db1;
 }
 
 .producto-card-img {
@@ -61,20 +60,21 @@ export default {
 
 .producto-card-body {
   margin: auto;
-  /* padding: .5em; */
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 }
 
 .producto-card-title {
-  margin-top: 5px;
+  margin: auto;
+  margin-top: 10px;
   font-size: 3vw;
 }
 
 .producto-card-price {
   margin: auto;
-  padding-bottom: .6em;
+  padding: 12px;
   font-size: 4vw;
 }
+
 </style>

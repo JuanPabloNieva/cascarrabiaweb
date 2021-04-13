@@ -11,11 +11,11 @@
         </div>
         <router-link id="productos" to="/" @click.native="expandirSubmenu">Productos</router-link>
         <div id="submenu-productos">
-          <div class="submenu-item"><a href="#" @click="filtrarPor('Todas')">Mostrar Todos</a></div>
-          <div class="submenu-item"><a href="#" @click="filtrarPor('Pilusos')">Pilusos</a></div>
-          <div class="submenu-item"><a href="#" @click="filtrarPor('Gorras')">Gorras</a></div>
-          <div class="submenu-item"><a href="#" @click="filtrarPor('Medias')">Medias</a></div>
-          <div class="submenu-item"><a href="#" @click="filtrarPor('Gorritos')">Gorritos</a></div>
+          <div class="submenu-item"><a href="#" @click="filtrarPor('Todas')">Quiero ver todo</a></div>
+          <div class="submenu-item"><a href="#" @click="filtrarPor('Pilusos')">Quiero ver pilusos</a></div>
+          <div class="submenu-item"><a href="#" @click="filtrarPor('Gorras')">Quiero ver gorras</a></div>
+          <div class="submenu-item"><a href="#" @click="filtrarPor('Medias')">Quiero ver medias</a></div>
+          <div class="submenu-item"><a href="#" @click="filtrarPor('Gorritos')">Quiero ver gorritos</a></div>
         </div>
         <router-link to="/about" @click.native="cerrarMenu">Nosotros</router-link>
         <router-link to="/servicios" @click.native="cerrarMenu">Ayuda</router-link>
@@ -74,30 +74,31 @@ export default {
 
 a {
   text-decoration: none;
-  color: #333333;
+  color: #ff4db1;
 }
 
 html {
-  background-color: #ffffff;
+  background-color: #FFE4F9;
 }
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #333333;
+  color: #000000;
 }
 
 #nav-bar {
     display: flex;
     justify-content: space-between;
-    background-color: #ffee2f;
+    background-color: #000000;
 }
 
 /* boton menu - boton carrito */
 
 .nav-bar-menu {
     margin: 1rem;
+    color: #ff4db1;
 }
 
 #nav-bar-extend {
@@ -118,7 +119,7 @@ html {
     padding: 0%;
     width: 70vw;
     height: 100vh;
-    background-color: #ffee2f;
+    background-color: #000000;
 }
 
 #equis-nav-bar {
@@ -129,7 +130,6 @@ html {
 
 #equis {
   font-size: 1.5em;
-  /* width: 10vh; */
   padding: 15px;
   text-align: center;
   text-decoration: none;
@@ -147,19 +147,21 @@ html {
 #submenu-productos {
   display: none;
   flex-direction: column;
-  background-color: #ffffff;
+  background-color: #000000;
 }
 
 .submenu-item {
   display: flex;
   justify-content: center;
-  border-bottom: 2px solid #ffee2f;
+  border-bottom: 1px solid #ff4db1;
 }
 
 .submenu-item > a {
   padding: 20px;
-  text-align: center;
+  padding-left: 40px;
+  text-align: start;
   width: 100%;
   font-weight: bold;
+  color: #FFE4F9;
 }
 </style>
