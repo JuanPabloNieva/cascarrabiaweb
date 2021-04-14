@@ -2,6 +2,7 @@
   <div id="app">
     <nav id="nav-bar">
       <div id="menu" class="nav-bar-menu"> <a href="#" type="button" v-on:click="expandirMenu"><i class="fas fa-bars"></i></a> </div>
+      <div class="logo-home"><router-link to="/"><img id="logo" src="@/assets/Logo.png" alt="Logo de cascarrabia"></router-link></div>
       <div class="nav-bar-menu"><i class="fas fa-shopping-cart"></i></div>
     </nav>
     <div id="nav-bar-extend" v-on:click="clickearFueraMenu">
@@ -75,6 +76,10 @@ export default {
 a {
   text-decoration: none;
   color: #ff4db1;
+}
+
+a:active {
+  color: #ffee2f;
 }
 
 html {
@@ -163,5 +168,16 @@ html {
   width: 100%;
   font-weight: bold;
   color: #FFE4F9;
+}
+
+.logo-home {
+  display: flex;
+  background-color: #000000;
+}
+
+#logo {
+  margin: auto;
+  padding: 10px;
+  width: 25vw;
 }
 </style>
