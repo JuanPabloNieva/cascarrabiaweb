@@ -39,7 +39,9 @@ export default {
     padding: .5em;
     background-color: #000000;
     font-weight: bold;
-    /* position: fixed; */
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0%;
 }
 
 .title-categoria {
@@ -53,14 +55,18 @@ export default {
 }
 
 .categorias-item {
-    margin: 10px auto;
-    padding: .5em;
-    border-radius: 5px;
-    background-color: #111111;
-    font-size: 3vw;
+  margin: 10px auto;
+  padding: .5em;
+  border-radius: 5px;
+  background-color: #111111;
+  font-size: 3vw;
 }
 
 .categorias-item > a {
   color: #FFE4F9;
+}
+
+.categorias-item > a:focus {
+  color: #ffee2f;
 }
 </style>
