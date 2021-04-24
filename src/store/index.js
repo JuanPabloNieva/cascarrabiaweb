@@ -21,7 +21,7 @@ export default new Vuex.Store({
   actions: {
     getProducts: async function ({ commit }) {
       await axios
-        .get('https://cascarrabia.herokuapp.com/api/productos_all')
+        .get(process.env.VUE_APP_PRODUCTS_API)
         .then(response => {
           const products = response.data.productos
           commit('loadProducts', products)
@@ -30,7 +30,7 @@ export default new Vuex.Store({
     },
     filterBy: async function ({ commit }, value) {
       await axios
-        .get('https://cascarrabia.herokuapp.com/api/productos_all')
+        .get(process.env.VUE_APP_PRODUCTS_API)
         .then(response => {
           let products = response.data.productos
           if (value !== 'TODO') {
@@ -43,7 +43,7 @@ export default new Vuex.Store({
     },
     getCategories: async function ({ commit }) {
       await axios
-        .get('https://cascarrabia.herokuapp.com/api/categorias_all')
+        .get(process.env.VUE_APP_CATEGORIES_API)
         .then(response => {
           const categories = response.data.categorias
           commit('loadCategories', categories)

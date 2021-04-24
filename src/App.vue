@@ -15,6 +15,7 @@ import Browser from './components/Browser.vue'
 import BrowserExtended from './components/BrowserExtended.vue'
 import Pie from './components/Pie.vue'
 import Whatsapp from './components/Whatsapp.vue'
+import './assets/css/style.css'
 
 export default {
   components: { Browser, BrowserExtended, Loader, Pie, Whatsapp }
@@ -22,7 +23,8 @@ export default {
 </script>
 
 <style>
-:root {
+/* @import url('./assets/css/style.css'); */
+/* :root {
   --main-color : #000000;
   --links-color : #FF4DB1;
   --fondo-light-color : #FFE4F9;
@@ -67,14 +69,5 @@ html {
   margin: auto;
   padding: 10px;
   width: 25vw;
-}
-
-@media (prefers-color-scheme:dark){
-  #app {
-    color: var(--text-color);
-  }
-  html {
-    background-color: var(--fondo-light-color);
-  }
-}
+} */
 </style>

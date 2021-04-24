@@ -2,7 +2,7 @@
     <div id="nav">
         <nav id="nav-bar">
             <div id="menu" class="nav-bar-menu"> <a href="#" type="button" @click="expandMenu"><i class="fas fa-bars"></i></a> </div>
-            <div class="logo-home"><router-link to="/"><img id="logo" src="@/assets/Logo.png" alt="Logo de cascarrabia"></router-link></div>
+            <div class="logo-home"><router-link to="/"><img id="logo" src="@/assets/images/Logo.png" alt="Logo de cascarrabia"></router-link></div>
             <div class="nav-bar-menu"><i class="fas fa-shopping-cart"></i></div>
         </nav>
     </div>
