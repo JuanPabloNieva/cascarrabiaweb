@@ -1,10 +1,7 @@
 <template>
-  <div id="submenu-productos">
-    <div class="submenu-item"><a href="#" @click="filtrarPor('Todas')">Quiero ver todo</a></div>
-    <div class="submenu-item"><a href="#" @click="filtrarPor('Pilusos')">Quiero ver pilusos</a></div>
-    <div class="submenu-item"><a href="#" @click="filtrarPor('Gorras')">Quiero ver gorras</a></div>
-    <div class="submenu-item"><a href="#" @click="filtrarPor('Medias')">Quiero ver medias</a></div>
-    <div class="submenu-item"><a href="#" @click="filtrarPor('Gorritos')">Quiero ver gorritos</a></div>
+  <div id="products-submenu">
+    <div class="submenu-item"><a href="#" @click="filterBy('TODO')">Quiero ver TODO</a></div>
+    <div class="submenu-item" v-for="categoria of categories" :key="categoria.id"><a href="#" @click="filterBy(categoria.nombre)">Quiero ver {{categoria.nombre}}</a></div>
   </div>
 </template>
 
@@ -14,11 +11,11 @@ import { mapState, mapActions } from 'vuex'
 export default {
   computed: {
     ...mapState({
-      filtro: state => state.filtro
+      categories: state => state.categories
     })
   },
   methods: {
-    ...mapActions(['filtrarPor'])
+    ...mapActions(['filterBy'])
   }
 }
 </script>
@@ -34,8 +31,8 @@ export default {
   --text-light-color: #FFE4F9;
   --fondo-transparente: rgb(0, 0, 0, .7);
 }
-/* SUBMENU-PRODUCTOS */
-#submenu-productos {
+/* products-submenu */
+#products-submenu {
   display: none;
   flex-direction: column;
   background-color: var(--main-color);

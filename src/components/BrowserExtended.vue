@@ -1,27 +1,27 @@
 <template>
     <div>
-        <div id="nav-bar-extend" v-on:click="clickearFueraMenu">
+        <div id="nav-bar-extended" v-on:click="clickOutsideMenu">
         <div id="nav-bar-items">
             <div id="equis-nav-bar">
-                <a id="equis" href="#" v-on:click="cerrarMenu">X</a>
+                <a id="equis" href="#" v-on:click="closeMenu">X</a>
             </div>
-            <router-link id="productos" to="/" @click.native="expandirSubmenu">Productos</router-link>
-            <submenu-productos/>
-            <router-link to="/about" @click.native="cerrarMenu">Nosotros</router-link>
-            <router-link to="/servicios" @click.native="cerrarMenu">Ayuda</router-link>
+            <router-link id="products" to="/" @click.native="expandSubmenu">Productos</router-link>
+            <ProductsSubmenu/>
+            <router-link to="/about" @click.native="closeMenu">Nosotros</router-link>
+            <router-link to="/servicios" @click.native="closeMenu">Ayuda</router-link>
         </div>
         </div>
     </div>
 </template>
 
 <script>
-import SubmenuProductos from './SubmenuProductos.vue'
+import ProductsSubmenu from './ProductsSubmenu.vue'
 
 export default {
-  components: { SubmenuProductos },
+  components: { ProductsSubmenu },
   methods: {
-    expandirSubmenu () {
-      const div = document.getElementById('submenu-productos')
+    expandSubmenu () {
+      const div = document.getElementById('products-submenu')
       const el = window.getComputedStyle(div)
       if (el.getPropertyValue('display') === 'flex') {
         div.style.display = 'none'
@@ -29,17 +29,17 @@ export default {
         div.style.display = 'flex'
       }
     },
-    cerrarMenu () {
-      document.getElementById('nav-bar-extend').style.display = 'none'
+    closeMenu () {
+      document.getElementById('nav-bar-extended').style.display = 'none'
     },
-    clickearFueraMenu (e) {
+    clickOutsideMenu (e) {
       const clic = e.target
       const div = document.getElementById('nav-bar-items')
-      const prod = document.getElementById('productos')
+      const prod = document.getElementById('products')
       const el = window.getComputedStyle(div)
-      /* Si el elemento esta en display:flex y se clickea fuera del elemento o en productos */
+      /* Si el elemento esta en display:flex y se clickea fuera del elemento o en products */
       if (el.getPropertyValue('display') === 'flex' && clic !== div && clic !== prod) {
-        document.getElementById('nav-bar-extend').style.display = 'none'
+        document.getElementById('nav-bar-extended').style.display = 'none'
       }
     }
   }
@@ -58,7 +58,7 @@ export default {
   --fondo-transparente: rgb(0, 0, 0, .7);
 }
 
-#nav-bar-extend {
+#nav-bar-extended {
     display: none;
     position: absolute;
     justify-content: flex-start;

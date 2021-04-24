@@ -1,19 +1,23 @@
 <template>
   <div id="app">
-    <loader/>
-    <navegador/>
-    <nav-extendido/>
+    <Loader/>
+    <Browser/>
+    <BrowserExtended/>
     <router-view/>
+    <Whatsapp/>
+    <pie/>
   </div>
 </template>
 
 <script>
 import Loader from './components/Loader.vue'
-import Navegador from './components/Navegador.vue'
-import NavExtendido from './components/NavExtendido.vue'
+import Browser from './components/Browser.vue'
+import BrowserExtended from './components/BrowserExtended.vue'
+import Pie from './components/Pie.vue'
+import Whatsapp from './components/Whatsapp.vue'
 
 export default {
-  components: { Navegador, NavExtendido, Loader }
+  components: { Browser, BrowserExtended, Loader, Pie, Whatsapp }
 }
 </script>
 

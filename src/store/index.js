@@ -6,34 +6,47 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    filtro: 'Todas',
-    productos: [],
-    productosAll: []
+    filter: 'TODO',
+    products: [],
+    categories: []
   },
   mutations: {
-    cargarProductos (state, productos) {
-      state.productos = productos
+    loadProducts (state, products) {
+      state.products = products
+    },
+    loadCategories (state, categories) {
+      state.categories = categories
     }
   },
   actions: {
-    obtenerProductos: async function ({ commit }) {
+    getProducts: async function ({ commit }) {
       await axios
         .get('https://cascarrabia.herokuapp.com/api/productos_all')
         .then(response => {
-          const productos = response.data.productos
-          commit('cargarProductos', productos)
+          const products = response.data.productos
+          commit('loadProducts', products)
         })
         .catch(e => console.log(e))
     },
-    filtrarPor: async function ({ commit }, value) {
+    filterBy: async function ({ commit }, value) {
       await axios
         .get('https://cascarrabia.herokuapp.com/api/productos_all')
         .then(response => {
-          let productos = response.data.productos
-          if (value !== 'Todas') {
-            productos = productos.filter(p => p.categoria === value.toUpperCase())
+          let products = response.data.productos
+          if (value !== 'TODO') {
+            products = products.filter(p => p.categoria === value.toUpperCase())
           }
-          commit('cargarProductos', productos)
+          this.state.filter = value
+          commit('loadProducts', products)
+        })
+        .catch(e => console.log(e))
+    },
+    getCategories: async function ({ commit }) {
+      await axios
+        .get('https://cascarrabia.herokuapp.com/api/categorias_all')
+        .then(response => {
+          const categories = response.data.categorias
+          commit('loadCategories', categories)
         })
         .catch(e => console.log(e))
     }

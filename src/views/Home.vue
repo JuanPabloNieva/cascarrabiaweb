@@ -1,46 +1,74 @@
 <template>
   <div class="home">
-    <Categorias/>
-    <div class="title">
+    <Categories/>
+    <div class="products-title">
       <h1>Productos</h1>
+      <p class="subtitle">{{ filter }}</p>
     </div>
-    <Productos/>
+    <div class="products-list">
+      <Product
+      v-for="product of products"
+      v-bind:key="product.id"
+      v-bind:nombre="product.nombre"
+      v-bind:url_imagen="product.url_imagen"
+      v-bind:precio="product.precio"></Product>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import Productos from '@/components/Productos.vue'
-import Categorias from '@/components/Categorias.vue'
+import Product from '@/components/Product.vue'
+import Categories from '@/components/Categories.vue'
 import { mapState, mapActions } from 'vuex'
 
 export default {
   name: 'Home',
   components: {
-    Productos,
-    Categorias
+    Product,
+    Categories
   },
   computed: {
     ...mapState({
-      productos: state => state.productos
+      filter: state => state.filter,
+      products: state => state.products
     })
   },
   methods: {
-    ...mapActions(['obtenerProductos'])
+    ...mapActions(['getProducts', 'getCategories'])
   },
   created () {
-    this.obtenerProductos()
+    this.getProducts()
+    this.getCategories()
   }
 }
 </script>
 
 <style scoped>
-.title {
+.home {
+  min-height: 100vh;
+}
+
+.products-title {
   display: flex;
+  flex-direction: column;
   margin: 10px;
 }
 
-.title h1 {
+.subtitle {
+  text-align: center;
+}
+
+.products-title h1 {
   margin: auto;
+}
+
+.products-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 5px;
+  font-weight: bold;
 }
 </style>
