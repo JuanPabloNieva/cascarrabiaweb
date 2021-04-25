@@ -6,6 +6,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    showMenu: false,
+    showSubmenu: true,
     filter: 'TODO',
     products: [],
     categories: []
@@ -16,18 +18,15 @@ export default new Vuex.Store({
     },
     loadCategories (state, categories) {
       state.categories = categories
+    },
+    expandMenu (state) {
+      state.showMenu = !state.showMenu
+    },
+    expandSubmenu (state) {
+      state.showSubmenu = !state.showSubmenu
     }
   },
   actions: {
-    getProducts: async function ({ commit }) {
-      await axios
-        .get(process.env.VUE_APP_PRODUCTS_API)
-        .then(response => {
-          const products = response.data.productos
-          commit('loadProducts', products)
-        })
-        .catch(e => console.log(e))
-    },
     filterBy: async function ({ commit }, value) {
       await axios
         .get(process.env.VUE_APP_PRODUCTS_API)
@@ -37,6 +36,15 @@ export default new Vuex.Store({
             products = products.filter(p => p.categoria === value.toUpperCase())
           }
           this.state.filter = value
+          commit('loadProducts', products)
+        })
+        .catch(e => console.log(e))
+    },
+    getProducts: async function ({ commit }) {
+      await axios
+        .get(process.env.VUE_APP_PRODUCTS_API)
+        .then(response => {
+          const products = response.data.productos
           commit('loadProducts', products)
         })
         .catch(e => console.log(e))

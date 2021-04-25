@@ -5,15 +5,27 @@
             <div class="logo-home"><router-link to="/"><img id="logo" src="@/assets/images/Logo.png" alt="Logo de cascarrabia"></router-link></div>
             <div class="nav-bar-menu"><i class="fas fa-shopping-cart"></i></div>
         </nav>
+        <transition name="fade">
+          <BrowserExtended v-if="showMenu"></BrowserExtended>
+        </transition>
     </div>
 </template>
 
 <script>
+import { mapState, mapMutations } from 'vuex'
+import BrowserExtended from './BrowserExtended.vue'
+
 export default {
+  components: {
+    BrowserExtended
+  },
+  computed: {
+    ...mapState({
+      showMenu: state => state.showMenu
+    })
+  },
   methods: {
-    expandMenu () {
-      document.getElementById('nav-bar-extended').style.display = 'flex'
-    }
+    ...mapMutations(['expandMenu'])
   }
 }
 </script>
@@ -41,5 +53,12 @@ export default {
 .nav-bar-menu {
     margin: 1rem;
     color: var(--links-color);
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }
 </style>

@@ -33,7 +33,7 @@ export default {
 }
 /* products-submenu */
 #products-submenu {
-  display: none;
+  display: flex;
   flex-direction: column;
   background-color: var(--main-color);
 }

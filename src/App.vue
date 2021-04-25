@@ -2,7 +2,7 @@
   <div id="app">
     <Loader/>
     <Browser/>
-    <BrowserExtended/>
+    <!-- <BrowserExtended/> -->
     <router-view/>
     <Whatsapp/>
     <pie/>
@@ -12,13 +12,13 @@
 <script>
 import Loader from './components/Loader.vue'
 import Browser from './components/Browser.vue'
-import BrowserExtended from './components/BrowserExtended.vue'
+// import BrowserExtended from './components/BrowserExtended.vue'
 import Pie from './components/Pie.vue'
 import Whatsapp from './components/Whatsapp.vue'
 import './assets/css/style.css'
 
 export default {
-  components: { Browser, BrowserExtended, Loader, Pie, Whatsapp }
+  components: { Browser, Loader, Pie, Whatsapp }
 }
 </script>
 
