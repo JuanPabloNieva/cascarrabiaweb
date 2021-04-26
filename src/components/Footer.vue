@@ -15,29 +15,3 @@
 <script>
 export default {}
 </script>
-
-<style scoped>
-li {
-    list-style: none;
-}
-
-#footer {
-  display: flex;
-  flex-direction: column;
-  margin-top: 10px;
-  height: 15vh;
-  border-top: 1px solid #000000;
-  background-color: #ffee2f;
-}
-
-.copy {
-  margin: auto 20px;
-  font-size: 1rem;
-}
-
-.redes {
-  margin: auto;
-  padding: 10px;
-  font-size: 1rem;
-}
-</style>

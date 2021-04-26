@@ -7,7 +7,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     showMenu: false,
-    showSubmenu: true,
+    showSubmenu: false,
     filter: 'TODO',
     products: [],
     categories: []

@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <a v-bind:href="dirWhatsapp" target="_blank">whatsapp</a>
+    <div id="whatsapp">
+        <a v-bind:href="dirWhatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
 </template>
 

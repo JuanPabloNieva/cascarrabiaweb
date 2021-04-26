@@ -29,6 +29,7 @@
 import Product from '@/components/Product.vue'
 import Category from '@/components/Category.vue'
 import { mapState, mapActions } from 'vuex'
+// import '@/assets/css/style.css'
 
 export default {
   name: 'Home',
@@ -54,7 +55,7 @@ export default {
 </script>
 
 <style scoped>
-.home {
+/* .home {
   min-height: 100vh;
 }
 
@@ -119,5 +120,5 @@ export default {
   justify-content: space-evenly;
   padding: 5px;
   font-weight: bold;
-}
+} */
 </style>

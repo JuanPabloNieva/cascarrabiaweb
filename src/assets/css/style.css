@@ -27,7 +27,8 @@ a:active, a:focus {
     color: var(--link-focus-color);
 }
 
-/* APP */
+/* ------------------------------------------------------------------APP------------------------------------------------------- */
+
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -45,4 +46,285 @@ a:active, a:focus {
     padding: 10px;
     width: 25vw;
 }
-/* HOME */
+/* ------------------------------------------------------------------HOME------------------------------------------------------ */
+.home {
+    min-height: 100vh;
+  }
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-top: 1em;
+    padding: .5em;
+    background-color: #000000;
+    font-weight: bold;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0%;
+}
+
+.title-category {
+  text-align: center;
+  color: #ff4db1;
+}
+
+.categories-list {
+  display: flex;
+  margin-top: 10px;
+}
+
+.categories-item {
+  margin: 10px auto;
+  padding: .5em;
+  border-radius: 5px;
+  background-color: #111111;
+  font-size: 3vw;
+}
+
+.categories-item > a {
+  color: #FFE4F9;
+}
+
+.categories-item > a:focus {
+  color: #ffee2f;
+}
+
+.products-title {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.subtitle {
+  text-align: center;
+}
+
+.products-title h1 {
+  margin: auto;
+}
+
+.products-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 5px;
+  font-weight: bold;
+}
+
+/* -----------------------------------------------------------------BROWSER---------------------------------------------------- */
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--main-color);
+}
+
+/* boton menu - boton carrito */
+
+.nav-bar-menu {
+    margin: 1rem;
+    color: var(--links-color);
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+  
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+
+/* --------------------------------------------------------------BROWSER-EXTENDED---------------------------------------------- */
+#nav-bar-extended {
+    display: flex;
+    position: absolute;
+    justify-content: flex-start;
+    z-index: 5;
+    top: 0%;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--fondo-transparente);
+    font-weight: bold;
+}
+
+#nav-bar-items {
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    padding: 0%;
+    width: 70vw;
+    height: 100vh;
+    background-color: var(--main-color);
+}
+
+.equis-nav-bar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 4px;
+}
+
+.equis {
+  font-size: 1.5em;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#nav-bar-items > a{
+  display: flex;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+/* ----------------------------------------------------------------CATEGORY---------------------------------------------------- */
+.category {
+    margin: 10px auto;
+    padding: .5em;
+    border-radius: 5px;
+    background-color: #111111;
+    font-size: 3vw;
+  }
+  
+  .category > a {
+    color: #FFE4F9;
+  }
+  
+  .category > a:focus {
+    color: #ffee2f;
+  }
+
+/* ----------------------------------------------------------------PRODUCTS---------------------------------------------------- */
+.product-card {
+    display: flex;
+    flex-direction: column;
+    margin: .3em;
+    border-bottom: 2px solid #ff4db1;
+  }
+  
+  .product-card-img {
+    display: flex;
+  }
+  
+  .product-card-img img {
+    margin: auto;
+    width: 40vw;
+    height: 50vw;
+    object-fit: contain;
+    background-color: #000000;
+  }
+  
+  .product-card-body {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  
+  .product-card-title {
+    margin: auto;
+    margin-top: 10px;
+    font-size: 3vw;
+  }
+  
+  .product-card-price {
+    margin: auto;
+    padding: 12px;
+    font-size: 4vw;
+  }
+/* ------------------------------------------------------------PRODUCTS-SUBMENU------------------------------------------------ */
+#products-submenu {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--main-color);
+  }
+  
+  .submenu-item {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid var(--links-color);
+  }
+  
+  .submenu-item > a {
+    padding: 20px;
+    padding-left: 40px;
+    text-align: start;
+    width: 100%;
+    font-weight: bold;
+    color: var(--fondo-light-color);
+  }
+
+/* ----------------------------------------------------------------FOOTER---------------------------------------------------- */
+#footer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    height: 15vh;
+    border-top: 1px solid #000000;
+    background-color: #ffee2f;
+  }
+  
+  .copy {
+    margin: auto 20px;
+    font-size: 1rem;
+  }
+  
+  .redes {
+    margin: auto;
+    padding: 10px;
+    font-size: 1rem;
+  }
+/* ----------------------------------------------------------------LOADER---------------------------------------------------- */
+.fondo-cargando {
+    display: flex;
+    position: absolute;
+    z-index: 10;
+    flex-direction: column;
+    justify-items: start;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--fondo-transparente);
+  }
+  
+  .text-cargando {
+    margin: 50px auto;
+    font-size: 30px;
+    font-weight: bold;
+    color:var(--link-focus-color)
+  }
+  
+  .cargando {
+    margin: 150px auto;
+    width: 100px;
+    height: 100px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 1.5s linear infinite;
+  }
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  /* --------------------------------------------------------WHATSAPP---------------------------------------------------------- */
+  #whatsapp {
+    font-size: 40px;
+    text-align: end;
+    margin: 20px;
+    position: -webkit-sticky;
+    position: sticky;
+  }
+
+  #whatsapp > a {
+    color: #00bb2d;
+  }
